@@ -1,0 +1,27 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Load server environment variables
+        run: |
+          source /home/githubRunner/.env
+        
+      - name: Build project
+        run: |
+          npm ci
+          npm run build
+      
+      - name: Deploy dist to webroot
+        run: |
+          rsync -avz --delete ./dist/ /var/www/shop/
