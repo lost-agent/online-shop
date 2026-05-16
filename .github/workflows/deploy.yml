@@ -31,4 +31,4 @@ jobs:
 
       - name: Deploy dist to webroot
         run: |
-          rsync -avz --delete ./dist/ /var/www/shop/
+          rsync -avz --delete --no-group ./dist/ /var/www/shop/
