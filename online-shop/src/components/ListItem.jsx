@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export const ListItem = () => {
+export const ListItem = ({ product }) => {
   return (
-    <div></div>
-  )
-}
+    <div className="w-64 h-64 bg-red-500" key={product.id}>
+      <h2>{product.name}</h2>
+    </div>
+  );
+};

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
+import { ListItem } from "./components/ListItem";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,9 +22,7 @@ function App() {
         <div className="flex justify-center">
           <div className="grid grid-cols-4 gap-5 mt-5">
             {products.map((product) => (
-              <div className="w-64 h-64 bg-red-500" key={product.id}>
-                <h2>{product.name}</h2>
-              </div>
+              <ListItem key={product.id} product={product} />
             ))}
           </div>
         </div>
