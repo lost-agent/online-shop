@@ -21,7 +21,7 @@ function App() {
       <div className='flex justify-center'>
       <div className='grid grid-cols-2 gap-5'>
         {products.map(product => (
-          <div className='w-32 h-32 bg-red-500' key={product.id}>
+          <div className='w-64 h-64 bg-red-500' key={product.id}>
             <h2>{product.name}</h2>
           </div>
         ))}
