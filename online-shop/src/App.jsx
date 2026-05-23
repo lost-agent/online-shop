@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch("https://shop.hasanhuseyin.tr/api/products");
+      const response = await fetch("/api/products");
       const data = await response.json();
       setProducts(data);
     }
